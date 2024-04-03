@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Football"
+    },
+    {
+        "name": "Basketball"
+    },
+    {
+        "name": "Tennis"
+    },
+    {
+        "name": "Golf"
+    },
+    {
+        "name": "Cricket"
+    },
+    {
+        "name": "Rugby"
+    },
+    {
+        "name": "Baseball"
+    },
+    {
+        "name": "Hockey"
+    },
+    {
+        "name": "Boxing"
+    },
+    {
+        "name": "Athletics"
+    },
+    {
+        "name": "Swimming"
+    },
+    {
+        "name": "Cycling"
+    },
+    {
+        "name": "Soccer"
+    },
+    {
+        "name": "Volleyball"
+    },
+    {
+        "name": "Table Tennis"
+    },
+    {
+        "name": "Badminton"
+    },
+    {
+        "name": "Gymnastics"
+    },
+    {
+        "name": "Skiing"
+    },
+    {
+        "name": "Snowboarding"
+    },
+    {
+        "name": "Surfing"
+    }
+]
