@@ -7,28 +7,50 @@ import Background from "@/components/organisms/Background"
 import Modal from "@/components/organisms/Modal"
 import { useWordsContext } from "@/context/wordsContext"
 import { useCallback, useEffect, useState } from "react"
+import { useOpenModal } from "@/hooks/useOpenModal"
+import { alphabet } from "@/data/alphabet"
 
 const CategoryPage = () => {
-  const [openLooseModal, setOpenLooseModal] = useState(false)
+  const [openLooseModal, setOpenLooseModal] = useState<boolean>(false)
+  const [openWinnerModal, setOpenWinnerModal] = useState<boolean>(false)
 
-  const { isWinner, lifeCounter, totalMoves, restartGame, movie } = useWordsContext()
+  const { isWinner, showResult, setSelectedLetters, lifeCounter, totalMoves, restartGame } = useWordsContext()
 
-  const openLooseModalAction = useCallback(() => {
+  const handleOpenLooseModal = useCallback(() => {
     if (lifeCounter === totalMoves) {
-      
+      showResult()
+      setSelectedLetters(alphabet)
+      setTimeout(() => {
+        setOpenLooseModal(true)
+      }, 1000)
     } else {
       setOpenLooseModal(false)
     }
   }, [lifeCounter, totalMoves])
 
+  const handleOpenWinModal = useCallback(() => {
+    if (isWinner) {
+      setSelectedLetters(alphabet)
+      setTimeout(() => {
+        setOpenWinnerModal(true)
+      }, 1000)
+    } else {
+      setOpenWinnerModal(false)
+    }
+  }, [isWinner])
+
   useEffect(() => {
-    openLooseModalAction()
-  }, [openLooseModalAction])
+    handleOpenWinModal()
+  }, [handleOpenWinModal])
+
+  useEffect(() => {
+    handleOpenLooseModal()
+  }, [handleOpenLooseModal])
+
 
   return (
     <>
       <CategoryPageContainer>
-
         <CategoryHeader />
 
         <CategoryPageContent>
@@ -39,10 +61,9 @@ const CategoryPage = () => {
         <Background />
       </CategoryPageContainer>
 
-      
-      {/* <Modal
+      <Modal
         title="You Won"
-        open={isWinner}
+        open={isWinner && openWinnerModal}
         action={restartGame}
         actionLabel="Play Again"
       />
@@ -52,7 +73,7 @@ const CategoryPage = () => {
         open={openLooseModal}
         action={restartGame}
         actionLabel="Play Again"
-      /> */}
+      />
     </>
   )
 }

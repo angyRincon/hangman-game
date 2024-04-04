@@ -12,7 +12,7 @@
         "name": "Jurassic World"
     },
     {
-        "name": "The Avengers"
+        "name": "Avengers"
     },
     {
         "name": "Furious 7"
@@ -28,9 +28,6 @@
     },
     {
         "name": "Frozen"
-    },
-    {
-        "name": "Beauty and the Beast"
     },
     {
         "name": "Incredibles"
@@ -54,22 +51,13 @@
         "name": "Captain Marvel"
     },
     {
-        "name": "The Lord of the Rings"
-    },
-    {
         "name": "Skyfall"
     },
     {
         "name": "Transformers"
     },
     {
-        "name": "The Dark Knight Rises"
-    },
-    {
         "name": "Toy Story"
-    },
-    {
-        "name": "Pirates of the Caribbean"
     },
     {
         "name": "Joker"
@@ -84,9 +72,6 @@
         "name": "Zootopia"
     },
     {
-        "name": "The Dark Knight"
-    },
-    {
         "name": "Finding Dory"
     },
     {
@@ -96,10 +81,10 @@
         "name": "The Hobbit"
     },
     {
-        "name": "The Lion King"
+        "name": "Lion King"
     },
     {
-        "name": "The Jungle Book"
+        "name": "Jungle Book"
     },
     {
         "name": "Finding Nemo"
@@ -117,16 +102,10 @@
         "name": "Zootopia"
     },
     {
-        "name": "The Hunger Games"
-    },
-    {
-        "name": "The Shawshank Redemption"
+        "name": "Hunger Games"
     },
     {
         "name": "The Godfather"
-    },
-    {
-        "name": "The Dark Knight"
     },
     {
         "name": "Pulp Fiction"
@@ -148,5 +127,8 @@
     },
     {
         "name": "La La Land"
+    },
+    {
+        "name": "Poor Things"
     }
 ]

@@ -5,17 +5,17 @@ import MenuIcon from "@/components/Icons/MenuIcon"
 import LifeBar from "@/components/atoms/LifeBar"
 import HeartIcon from "@/components/Icons/HeartIcon"
 import HeaderTemplate from "@/components/templates/HeaderTemplate"
-import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/templates/HeaderTemplate/HeaderTemplateStyled"
-import Modal from "../Modal"
 import { useWordsContext } from "@/context/wordsContext"
 import HeartBrokenIcon from "@/components/Icons/HeartBrokenIcon"
+import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/templates/HeaderTemplate/HeaderTemplateStyled"
+import Modal from "../Modal"
 import { LifePointsContainer, LifePointsValue } from "./CategoryHeaderStyled"
 import { useParams } from "next/navigation"
 import { categoriesMap } from "@/data/categories"
 
 const CategoryHeader = () => {
     const [openMenu, setOpenMenu] = useState(false)
-    const { lifeCounter, totalMoves, restartGame } = useWordsContext()
+    const { lifeCounter, totalMoves } = useWordsContext()
 
     const { category: categoryId } = useParams()
 
@@ -24,7 +24,6 @@ const CategoryHeader = () => {
     }
 
     const handleCloseMenu = () => {
-        restartGame()
         setOpenMenu(false)
     }
 

@@ -22,7 +22,6 @@ export const useCategory = (categoryId: string) => {
 
         setCategory(randomCategory)
         setCategoryArray(randomCategoryArray)
-
     }
 
     useEffect(() => {

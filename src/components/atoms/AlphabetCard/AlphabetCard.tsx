@@ -8,7 +8,7 @@ interface AlphabetCardProps {
 }
 
 const AlphabetCard: FC<AlphabetCardProps> = ({ letter }) => {
-    const { selectedLetters,  selectLetter, movie } = useWordsContext()
+    const { selectedLetters, selectLetter } = useWordsContext()
 
     return (
         <AlphabetCardButton

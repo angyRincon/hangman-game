@@ -1,8 +1,7 @@
 'use client'
 import { categoriesMap } from "@/data/categories";
 import { useCategory } from "@/hooks/useCategory";
-import { getRandomCategory } from "@/utils/categories";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { FC, ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 interface WordsContextProps {
@@ -13,7 +12,9 @@ interface WordsContextProps {
     selectedLetters: string[],
     selectLetter: (letter: string) => void;
     restartGame: () => void;
+    setSelectedLetters: (selectedLetters: string[]) => void;
     setMovie: (movie: string[]) => void
+    showResult: () => void
 }
 
 const initialValues: WordsContextProps = {
@@ -24,7 +25,9 @@ const initialValues: WordsContextProps = {
     selectedLetters: [],
     selectLetter: () => { },
     restartGame: () => { },
-    setMovie: () => { }
+    setMovie: () => { },
+    showResult: () => { },
+    setSelectedLetters: () => { }
 }
 
 const WordsContext = createContext(initialValues)
@@ -37,7 +40,9 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
 
     const { category: categoryId } = useParams()
 
-    const { category, categoryArray } = useCategory(categoryId as string)
+    const { category, categoryArray, getRandomCategory } = useCategory(categoryId as string)
+    
+    console.log('-', category)
 
     const totalMoves = 8
 
@@ -66,12 +71,17 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
         setMovie(categoryArray)
     }, [categoryArray])
 
+    const showResult = () => {
+        setMovie(category.split(''))
+    }
+
     const restartGame = () => {
-        const { randomCategory, randomCategoryArray } = getRandomCategory(categoryId)
-        setMovie(randomCategoryArray)
+        getRandomCategory()
         setIsWinner(false)
         setLifeCounter(0)
+        setSelectedLetters([])
     }
+
 
     const values = {
         movie,
@@ -81,8 +91,9 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
         lifeCounter,
         selectLetter,
         selectedLetters,
+        setSelectedLetters,
         restartGame,
-
+        showResult,
     }
 
     return (

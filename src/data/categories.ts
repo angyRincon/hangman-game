@@ -3,7 +3,7 @@ import tvShows from '../data/tvShows.json'
 import countries from '../data/countries.json'
 import capitalCities from '../data/capitalCities.json'
 import animals from '../data/animals.json'
-import sports from '../data/animals.json'
+import sports from '../data/sports.json'
 
 export const categories = [
     {
