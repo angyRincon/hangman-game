@@ -1,41 +1,41 @@
 import { Theme } from "@emotion/react"
 
 export const lightTheme: Theme = {
-    background: '#d7e3ee',
+    background: '#f3f7fa',
     primary: {
-        main: '#D7E3EE',
-        contrastText: '#292E3D'
+        main: '#8b9ec9',
+        contrastText: '#232a2e'
     },
     secondary: {
-        main: '#c770ff',
-        contrastText: '#460566'
+        main: '#9d40b9',
+        contrastText: '#fbf5ff'
     },
     colors: {
         gray: {
             '50': '#f3f7fa',
             '100': '#e9f0f6',
-            '200': '#d7e3ee',
-            '300': '#bed0e3',
-            '400': '#a4b6d5',
-            '500': '#8d9fc7',
-            '600': '#6c7cb2',
-            '700': '#63709f',
-            '800': '#525c81',
-            '900': '#464e69',
+            '200': '#d6e2ef',
+            '300': '#becfe3',
+            '400': '#a6b9d8',
+            '500': '#8b9ec9',
+            '600': '#7383b8',
+            '700': '#616ea1',
+            '800': '#505c83',
+            '900': '#454e6a',
             '950': '#292e3d',
         },
         purple: {
-            '50': '#fbf5ff',
-            '100': '#f6e7ff',
-            '200': '#eed4ff',
-            '300': '#e0b2ff',
-            '400': '#c770ff',
-            '500': '#ba51fb',
-            '600': '#a82eef',
-            '700': '#921ed2',
-            '800': '#7a1eab',
-            '900': '#64198a',
-            '950': '#460566',
+            '50': '#fbf6fd',
+            '100': '#f6ecfb',
+            '200': '#edd7f7',
+            '300': '#d8a2eb',
+            '400': '#d08de5',
+            '500': '#b960d5',
+            '600': '#9d40b9',
+            '700': '#843398',
+            '800': '#6e2b7d',
+            '900': '#5d2867',
+            '950': '#3a0f43',
         }
     }
 }
@@ -48,7 +48,7 @@ export const darkTheme: Theme = {
     },
     secondary: {
         main: '#c065d2',
-        contrastText: ''
+        contrastText: '#FFF'
     },
     colors: {
         gray: {

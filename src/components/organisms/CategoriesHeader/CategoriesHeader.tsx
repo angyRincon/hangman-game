@@ -9,7 +9,7 @@ const CategoriesHeader = () => {
         <HeaderTemplate>
             <HeaderLeftItems>
                 <Link href='/'>
-                    <IconButton>
+                    <IconButton variant="secondary">
                         <ArrowBackIcon />
                     </IconButton>
                 </Link>

@@ -34,7 +34,7 @@ const CategoryHeader = () => {
         <>
             <HeaderTemplate>
                 <HeaderLeftItems>
-                    <IconButton onClick={handleOpenMenu}>
+                    <IconButton onClick={handleOpenMenu} variant="secondary">
                         <MenuIcon />
                     </IconButton>
                     <HeaderTitle>{headerTitle}</HeaderTitle>

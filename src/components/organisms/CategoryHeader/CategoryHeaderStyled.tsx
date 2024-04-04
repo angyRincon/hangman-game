@@ -8,7 +8,7 @@ export const LifePointsContainer = styled.div`
 `
 
 export const LifePointsValue = styled.span`
-    color:#fff;
+    color:${({theme}) => theme.primary.contrastText};
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
 `

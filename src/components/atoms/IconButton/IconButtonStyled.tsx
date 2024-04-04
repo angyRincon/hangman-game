@@ -1,7 +1,6 @@
 'use client'
 import styled from '@emotion/styled'
 import { IconButtonSize } from './IconButton'
-import { SvgWrapper } from '@/components/Icons/IconStyled'
 import { buttonVariantStyle } from '../Button/ButtonStyled'
 import { ButtonVariantType } from '../Button/Button'
 
@@ -28,16 +27,12 @@ export const IconButtonContainer = styled.button<{ $size: IconButtonSize, $varia
 
         if ($size === 'medium') {
             return {
-                width: '60px',
-                height: '60px'
+                width: '50px',
+                height: '50px'
             }
         }
     }}
     
-    ${SvgWrapper} {
-        margin-left: 5px;
-    }
-
     &:hover {
         transform: scale(1.03)
     }

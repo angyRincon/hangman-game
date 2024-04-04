@@ -9,13 +9,12 @@ export const ModalTemplateBackdrop = styled.div`
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(8, 10, 72, 0.358)
-    
+    background-color: rgba(0, 0, 0, 0.526);
 `
 
 export const ModalTemplateContainer = styled.div`
     position: absolute;
-    background: rgb(18, 26, 255);
+    background: ${({theme}) => theme.primary.main};
     top: 150px;
     left: 0; 
     right: 0; 
@@ -38,5 +37,5 @@ export const ModalTemplateContent = styled.div`
 
 export const ModalTemplateTitle = styled.h1`
     font-size: 40px;
-    color: #FFF;
+    color: ${({theme}) => theme.primary.contrastText};
 `

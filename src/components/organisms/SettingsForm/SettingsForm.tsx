@@ -2,16 +2,15 @@
 import InputRadio from "@/components/atoms/InputRadio"
 import Button from "@/components/atoms/Button"
 import { SettingsCardForm } from "./SettingsFormStyled"
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
 import { initialSettings, useThemeSwitcher } from "@/context/themeContext"
 
 const SettingsForm = () => {
     const [data, setData] = useState(initialSettings.settingsData)
 
-    const { setSettingsData } = useThemeSwitcher()
-
-    const { setItem } = useLocalStorage()
+    const { settingsData, setSettingsData } = useThemeSwitcher()
+    const { getLocalStorageItem, setLocalStoragetItem } = useLocalStorage()
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setData({
@@ -23,8 +22,13 @@ const SettingsForm = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setSettingsData(data)
-        setItem('settings', data)
+        setLocalStoragetItem('settings', data)
     }
+
+    useEffect(() => {
+        const savedSettings = getLocalStorageItem('settings')
+        savedSettings ? setData(savedSettings) : setData(settingsData)
+    }, [])
 
     return (
         <SettingsCardForm onSubmit={handleSubmit}>

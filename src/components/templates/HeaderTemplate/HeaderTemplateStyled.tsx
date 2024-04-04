@@ -8,7 +8,7 @@ export const HeaderTemplateContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 30px 60px;
 `
 
 const HeaderSides = styled.div`
@@ -18,8 +18,8 @@ const HeaderSides = styled.div`
 `
 
 export const HeaderTitle = styled.h1`
-    color: #FFF;
-    font-size: 30px;
+    color: ${({ theme }) => theme.primary.contrastText};
+    font-size: 35px;
 `
 
 export const HeaderLeftItems = styled(HeaderSides)``

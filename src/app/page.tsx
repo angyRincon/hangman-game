@@ -15,8 +15,9 @@ export default function Home() {
 
         <PageBottomActions>
           <Button label='How to Play' />
+
           <Link href='/settings'>
-            <IconButton size="small">
+            <IconButton size="small" variant="secondary">
               <SettingsIcon size="small" />
             </IconButton>
           </Link>

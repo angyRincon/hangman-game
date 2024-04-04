@@ -30,7 +30,7 @@ export const ButtonContainer = styled.button<{ $variant: ButtonVariantType }>`
     border: none;
     height: 45px;
     min-width: 100px;
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 20px;
     border-radius: 4px;
     cursor: pointer;

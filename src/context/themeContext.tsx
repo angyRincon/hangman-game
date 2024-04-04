@@ -1,7 +1,8 @@
 'use client'
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { darkTheme, lightTheme } from "@/theme";
 import { ThemeProvider } from "@emotion/react";
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, Suspense, createContext, useContext, useEffect, useState } from "react";
 
 interface SettingsData {
     isLightTheme: boolean,
@@ -15,8 +16,8 @@ interface ThemeContextProps {
 
 export const initialSettings: ThemeContextProps = {
     settingsData: {
-        isLightTheme: false,
-        isDarkTheme: true,
+        isLightTheme: true,
+        isDarkTheme: false,
     },
     setSettingsData: () => { }
 }
@@ -24,7 +25,17 @@ export const initialSettings: ThemeContextProps = {
 const ThemeContext = createContext(initialSettings)
 
 export const ThemeSwitcherProvider = ({ children }: { children: ReactNode }) => {
+    const { getLocalStorageItem } = useLocalStorage()
     const [settingsData, setSettingsData] = useState<SettingsData>(initialSettings.settingsData)
+
+    const getTheme = () => {
+        const savedSettings = getLocalStorageItem('settings')
+        savedSettings ? setSettingsData(savedSettings) : setSettingsData(settingsData)
+    }
+
+    useEffect(() => {
+        getTheme()
+    }, [])
 
     const values = {
         settingsData,
@@ -32,11 +43,13 @@ export const ThemeSwitcherProvider = ({ children }: { children: ReactNode }) => 
     }
 
     return (
+
         <ThemeContext.Provider value={values}>
             <ThemeProvider theme={settingsData.isDarkTheme ? darkTheme : lightTheme}>
                 {children}
             </ThemeProvider>
         </ThemeContext.Provider>
+
     )
 }
 

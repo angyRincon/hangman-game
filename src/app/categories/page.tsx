@@ -17,14 +17,6 @@ const CategoriesPage = () => {
                         />
                     ))}
                 </CategoriesPageContent>
-                <CategoriesBackground
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    src="/images/leaves.png"
-                    alt="mountains"
-                    quality={100}
-                />
             </PageContainer>
         </>
     )

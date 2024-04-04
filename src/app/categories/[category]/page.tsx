@@ -40,7 +40,7 @@ const CategoryPage = () => {
       </CategoryPageContainer>
 
       
-      <Modal
+      {/* <Modal
         title="You Won"
         open={isWinner}
         action={restartGame}
@@ -52,7 +52,7 @@ const CategoryPage = () => {
         open={openLooseModal}
         action={restartGame}
         actionLabel="Play Again"
-      />
+      /> */}
     </>
   )
 }

@@ -12,7 +12,7 @@ export const PageBox = styled.div`
     position: relative;
     display: grid;
     grid-template-columns: minmax(100px, 400px);
-    background-color: ${({ theme }) => theme.colors.gray[400]};
+    background-color: ${({ theme }) => theme.primary.main};
     place-items: center;
     min-height: 370px;
     border-radius: 20px;

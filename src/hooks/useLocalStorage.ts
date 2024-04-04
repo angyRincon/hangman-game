@@ -1,13 +1,18 @@
 'use client'
 
 export const useLocalStorage = () => {
+    const getLocalStorageItem = (key: string) => {
+        const item = localStorage.getItem(key)
+        return item ? JSON.parse(item) : null
+    }
 
-    const setItem = (key: string, value: unknown) => {
+    const setLocalStoragetItem = (key: string, value: unknown) => {
         localStorage.setItem(key, JSON.stringify(value))
     }
 
 
     return {
-        setItem
+        getLocalStorageItem,
+        setLocalStoragetItem
     }
 }

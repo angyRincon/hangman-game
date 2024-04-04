@@ -8,8 +8,8 @@ export const LetterCardItem = styled.div<{$isActive: boolean}>`
     height: 80px;
     font-size: 25px;
     font-weight: 600;
-    background-color: ${({$isActive}) => $isActive ? '#000000' : '#5f5f5f83'};
-    color: white;
+    background-color: ${({theme, $isActive}) => $isActive ? theme.secondary.main : theme.primary.main};
+    color: ${({theme}) => theme.secondary.contrastText};
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin: 0 5px;

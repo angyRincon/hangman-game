@@ -12,7 +12,7 @@ export const CategoriesPageContainer = styled.div`
 export const CategoriesPageContent = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 300px);
-    gap: 40px;
+    gap: 20px;
 `
 
 export const CategoriesBackground = styled(BackgroundStyle)`

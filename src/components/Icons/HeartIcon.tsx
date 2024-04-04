@@ -1,13 +1,16 @@
+import { useTheme } from "@emotion/react"
 import { SvgWrapper } from "./IconStyled"
 
 const HeartIcon = () => {
+    const theme = useTheme()
+
     return (
         <SvgWrapper
             xmlns="http://www.w3.org/2000/svg"
             height="30px"
             width="30px"
             viewBox="0 0 24 24"
-            fill="#c770ff">
+            fill={theme.secondary.main}>
             <path
                 d="M0 0h24v24H0z"
                 fill="none" />

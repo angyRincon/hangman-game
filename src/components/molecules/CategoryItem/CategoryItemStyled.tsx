@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 
 export const CategoryItemContainer = styled(Link)`
-    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +13,15 @@ export const CategoryItemContainer = styled(Link)`
     font-size: 25px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #fff;
 
-    &:hover {
-        
-    }
+    ${({theme}) => ({
+        background: theme.primary.main,
+        color: theme.primary.contrastText,
+        '&:hover': {
+            background: theme.secondary.main,
+            color: theme.secondary.contrastText
+        }
+    })}
+
+    
 `
