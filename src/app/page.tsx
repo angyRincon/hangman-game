@@ -5,7 +5,7 @@ import MainTitle from "@/components/molecules/MainTitle";
 import Button from "@/components/atoms/Button";
 import IconButton from "@/components/atoms/IconButton";
 import SettingsIcon from "@/components/Icons/SettingsIcon";
-import { SettingsTab } from "./settings/types";
+import { SettingsTab } from "@/types/settings";
 
 export default function Home() {
   return (

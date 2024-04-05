@@ -3,10 +3,11 @@ import { WordsContextProvider } from "@/context/wordsContext"
 import { ThemeSwitcherProvider } from "@/context/settingsContext"
 import GlobalStyles from "./GlobalStyles"
 import { cookies } from "next/headers"
+import { initialSettings } from "@/data/settings/config"
 
 const Providers: FC<{ children: ReactNode }> = ({ children }) => {
     const cookie = cookies().get('settings')
-    const settings = cookie?.value ? JSON.parse(cookie.value) : null
+    const settings = cookie?.value ? JSON.parse(cookie.value) : initialSettings
 
     return (
         <ThemeSwitcherProvider settings={settings}>

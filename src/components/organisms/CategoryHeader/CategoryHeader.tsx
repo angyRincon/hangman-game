@@ -11,7 +11,7 @@ import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/tem
 import Modal from "../Modal"
 import { LifePointsContainer, LifePointsValue } from "./CategoryHeaderStyled"
 import { useParams } from "next/navigation"
-import { categoriesMap } from "@/data/categories"
+import { categoriesMap } from "@/data/categories/categories"
 
 const CategoryHeader = () => {
     const [openMenu, setOpenMenu] = useState(false)

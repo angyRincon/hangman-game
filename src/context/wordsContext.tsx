@@ -1,5 +1,5 @@
 'use client'
-import { categoriesMap } from "@/data/categories";
+import { categoriesMap } from "@/data/categories/categories";
 import { useCategory } from "@/hooks/useCategory";
 import { useParams } from "next/navigation";
 import { FC, ReactNode, createContext, useContext, useEffect, useState } from "react";

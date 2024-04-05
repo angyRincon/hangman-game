@@ -2,53 +2,41 @@
 import InputRadio from "@/components/atoms/InputRadio"
 import Button from "@/components/atoms/Button"
 import { SettingsCardForm } from "./SettingsThemeFormStyled"
-import { ChangeEvent, FormEvent, useEffect, useState } from "react"
-import { useLocalStorage } from "@/hooks/useLocalStorage"
-import { initialSettings, useThemeSwitcher } from "@/context/settingsContext"
+import { ChangeEvent, FormEvent, useState } from "react"
+import { useThemeSwitcher } from "@/context/settingsContext"
 import { setCookie } from "@/helpers/cookies"
+import { ThemeEnum } from "@/types/settings"
 
 const SettingsThemeForm = () => {
-    const [data, setData] = useState(initialSettings.settingsData)
-
-    const { settingsData, setSettingsData } = useThemeSwitcher()
-    const { getLocalStorageItem, setLocalStoragetItem } = useLocalStorage()
+    const { settings } = useThemeSwitcher()
+    const [theme, setData] = useState(settings.theme)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setData({
-            isLightTheme: e.target.value === 'isLightTheme',
-            isDarkTheme: e.target.value === 'isDarkTheme'
-        })
+        setData(e.target.value === 'light' ? ThemeEnum.LIGHT : ThemeEnum.DARK)
     }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setSettingsData(data)
-        setLocalStoragetItem('settings', data)
-        setCookie('settings', data)
+        setCookie('settings', { ...settings, theme })
     }
-
-    useEffect(() => {
-        const savedSettings = getLocalStorageItem('settings')
-        savedSettings ? setData(savedSettings) : setData(settingsData)
-    }, [])
 
     return (
         <SettingsCardForm onSubmit={handleSubmit}>
             <InputRadio
-                value="isLightTheme"
+                value="light"
                 label="Light Theme"
                 onChange={handleChange}
-                checked={data.isLightTheme}
+                checked={theme === ThemeEnum.LIGHT}
             />
 
             <InputRadio
-                value="isDarkTheme"
+                value="dark"
                 label="Dark Theme"
                 onChange={handleChange}
-                checked={data.isDarkTheme}
+                checked={theme === ThemeEnum.DARK}
             />
 
-            <Button label="Save" type='submit' variant="secondary"/>
+            <Button label="Save" type='submit' variant="secondary" />
         </SettingsCardForm>
     )
 }

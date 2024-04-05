@@ -1,9 +1,9 @@
-import movies from '../data/movies.json'
-import tvShows from '../data/tvShows.json'
-import countries from '../data/countries.json'
-import capitalCities from '../data/capitalCities.json'
-import animals from '../data/animals.json'
-import sports from '../data/sports.json'
+import movies from './movies.json'
+import tvShows from './tvShows.json'
+import countries from './countries.json'
+import capitalCities from './capitalCities.json'
+import animals from './animals.json'
+import sports from './sports.json'
 
 export const categories = [
     {

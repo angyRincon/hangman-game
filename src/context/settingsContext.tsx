@@ -1,44 +1,44 @@
 'use client'
+import { initialSettings } from "@/data/settings/config";
 import { darkTheme, lightTheme } from "@/theme";
+import { Settings, ThemeEnum } from "@/types/settings";
 import { ThemeProvider } from "@emotion/react";
-import { ReactNode, createContext, useContext, useState } from "react";
-
-interface SettingsData {
-    isLightTheme: boolean,
-    isDarkTheme: boolean
-}
+import { ReactNode, createContext, useContext } from "react";
 
 interface ThemeContextProps {
-    settingsData: SettingsData,
-    setSettingsData: (settingsData: SettingsData) => void
+    settings: Settings,
 }
 
-export const initialSettings: ThemeContextProps = {
-    settingsData: {
-        isLightTheme: true,
-        isDarkTheme: false,
-    },
-    setSettingsData: () => { }
+export const initialSettingsContext: ThemeContextProps = {
+    settings: initialSettings
 }
 
-const ThemeContext = createContext(initialSettings)
+const ThemeContext = createContext(initialSettingsContext)
 
 interface ThemeSwitcherProviderProps {
-    settings: any,
+    settings: Settings,
     children: ReactNode
 }
 
 export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProviderProps) => {
-    const [settingsData, setSettingsData] = useState<SettingsData>(settings)
+    const getTheme = () => {
+        switch (settings.theme) {
+            case ThemeEnum.LIGHT:
+                return lightTheme
+            case ThemeEnum.DARK:
+                return darkTheme
+            default:
+                return lightTheme
+        }
+    }
 
     const values = {
-        settingsData,
-        setSettingsData
+        settings
     }
 
     return (
         <ThemeContext.Provider value={values}>
-            <ThemeProvider theme={settingsData.isDarkTheme ? darkTheme : lightTheme}>
+            <ThemeProvider theme={getTheme()}>
                 {children}
             </ThemeProvider>
         </ThemeContext.Provider>

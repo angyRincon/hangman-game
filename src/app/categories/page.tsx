@@ -1,5 +1,5 @@
 import CategoryItem from "@/components/molecules/CategoryItem"
-import { categories } from "@/data/categories"
+import { categories } from "@/data/categories/categories"
 import { CategoriesBackground, CategoriesPageContainer, CategoriesPageContent } from "./CategoriesPageStyled"
 import CategoriesHeader from "@/components/organisms/CategoriesHeader"
 import { PageContainer } from "../PageStyled"

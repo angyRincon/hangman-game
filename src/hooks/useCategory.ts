@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { categoriesMap } from "@/data/categories"
-import { CategoryItem } from "@/data/types"
+import { categoriesMap } from "@/data/categories/categories"
+import { CategoryItem } from "@/data/categories/types"
 
 export const useCategory = (categoryId: string) => {
     const [category, setCategory] = useState<string>('')

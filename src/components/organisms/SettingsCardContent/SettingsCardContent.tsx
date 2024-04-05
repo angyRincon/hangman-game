@@ -4,7 +4,7 @@ import SettingsFontForm from "../SettingsFontForm"
 import SettingsLanguageForm from "../SettingsLanguageForm"
 import SettingsThemeForm from "../SettingsThemeForm"
 import { SettingsCardContentContainer } from "./SettingsCardContentStyled"
-import { SettingsTab } from "@/app/settings/types"
+import { SettingsTab } from "@/types/settings"
 
 const SettingsCardContent = () => {
     const searchParams = useSearchParams()
