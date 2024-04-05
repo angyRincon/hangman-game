@@ -5,8 +5,8 @@ export const InputRadioSpan = styled.span`
     position: absolute;
     top: 5px;
     left: 0;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     background-color: #eee;
     border-radius: 50%;
 
@@ -14,8 +14,8 @@ export const InputRadioSpan = styled.span`
         content: "";
         position: absolute;
         display: none;
-        top: 5px;
-        left: 5px;
+        top: 4px;
+        left: 4px;
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -41,7 +41,7 @@ export const InputRadioLabel = styled.label`
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

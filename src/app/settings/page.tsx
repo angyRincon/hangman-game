@@ -1,35 +1,13 @@
-'use client'
-import SettingsForm from "@/components/organisms/SettingsForm"
-import {
-    SettingsCardContent,
-    SettingsCardHeader,
-    SettingsCardTitle,
-    SettingsPageContainer,
-    SettingsPageContent
-} from "./SettingsPageStyled"
-import IconButton from "@/components/atoms/IconButton"
-import ArrowBackIcon from "@/components/Icons/ArrowBackIcon"
-import Link from "next/link"
+import { SettingsPageContainer, SettingsPageContent } from "./SettingsPageStyled"
+import SettingsCardHeader from "@/components/molecules/SettingsCardHeader"
+import SettingsCardContent from "@/components/organisms/SettingsCardContent"
 
 const SettingsPage = () => {
     return (
         <SettingsPageContainer>
             <SettingsPageContent>
-                <SettingsCardHeader>
-                    <Link href='/'>
-                        <IconButton size="small" variant="secondary">
-                            <ArrowBackIcon size="small" />
-                        </IconButton>
-                    </Link>
-
-                    <SettingsCardTitle>
-                        Settings
-                    </SettingsCardTitle>
-                </SettingsCardHeader>
-
-                <SettingsCardContent>
-                    <SettingsForm />
-                </SettingsCardContent>
+                <SettingsCardHeader />
+                <SettingsCardContent />
             </SettingsPageContent>
         </SettingsPageContainer>
     )

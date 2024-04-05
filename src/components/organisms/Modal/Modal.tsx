@@ -18,8 +18,8 @@ const Modal: FC<ModalProps> = ({ open, title, action, actionLabel }) => {
     const router = useRouter()
 
     const handleAction = (redirectRoute: string) => {
-        restartGame()
         router.push(redirectRoute)
+        restartGame()
     }
 
     const handleNewCategory = () => {

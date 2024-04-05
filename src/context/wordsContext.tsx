@@ -42,7 +42,7 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
 
     const { category, categoryArray, getRandomCategory } = useCategory(categoryId as string)
     
-    console.log('-', category)
+    // console.log('-', category)
 
     const totalMoves = 8
 

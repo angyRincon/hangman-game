@@ -9,7 +9,7 @@ export const AlphabetCardButton = styled.button`
     border-radius: 4px;
     border: none;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     transition: .5s;
 
     ${({theme}) => ({

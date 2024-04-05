@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Merienda } from "next/font/google";
+import { Lora, Merienda, Quicksand } from "next/font/google";
 import Providers from "./_providers";
 import { FC, Suspense } from "react";
 import Loading from "./loading";
 
-const inter = Merienda({ subsets: ["latin"] });
+const fontFamily = Quicksand({ subsets: ["latin"] });
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fontFamily.className}>
         <Providers>
           <Suspense fallback={<Loading />}>
             {children}

@@ -5,6 +5,7 @@ import MainTitle from "@/components/molecules/MainTitle";
 import Button from "@/components/atoms/Button";
 import IconButton from "@/components/atoms/IconButton";
 import SettingsIcon from "@/components/Icons/SettingsIcon";
+import { SettingsTab } from "./settings/types";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <PageBottomActions>
           <Button label='How to Play' />
 
-          <Link href='/settings'>
+          <Link href={`/settings?tab=${SettingsTab.THEME}`}>
             <IconButton size="small" variant="secondary">
               <SettingsIcon size="small" />
             </IconButton>

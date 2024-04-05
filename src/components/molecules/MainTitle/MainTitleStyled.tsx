@@ -10,7 +10,7 @@ export const MainTitleContainer = styled.div`
 export const ManinText = styled.h1`
     color: ${({theme}) => theme.primary.contrastText};
     font-size: 50px;
-    margin-top: -15px;
+    margin-top: -10px;
     font-weight: 700;
 `
 
@@ -24,7 +24,6 @@ export const SmallText = styled.p`
 
 export const SmallBottomText = styled(SmallText)`
     text-align: right;
-    margin-top: -10px;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-left: unset;
 `

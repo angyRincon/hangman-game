@@ -1,12 +1,13 @@
 'use client'
 import InputRadio from "@/components/atoms/InputRadio"
 import Button from "@/components/atoms/Button"
-import { SettingsCardForm } from "./SettingsFormStyled"
+import { SettingsCardForm } from "./SettingsThemeFormStyled"
 import { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
-import { initialSettings, useThemeSwitcher } from "@/context/themeContext"
+import { initialSettings, useThemeSwitcher } from "@/context/settingsContext"
+import { setCookie } from "@/helpers/cookies"
 
-const SettingsForm = () => {
+const SettingsThemeForm = () => {
     const [data, setData] = useState(initialSettings.settingsData)
 
     const { settingsData, setSettingsData } = useThemeSwitcher()
@@ -23,6 +24,7 @@ const SettingsForm = () => {
         e.preventDefault()
         setSettingsData(data)
         setLocalStoragetItem('settings', data)
+        setCookie('settings', data)
     }
 
     useEffect(() => {
@@ -50,4 +52,4 @@ const SettingsForm = () => {
         </SettingsCardForm>
     )
 }
-export default SettingsForm
+export default SettingsThemeForm
