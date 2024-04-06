@@ -7,14 +7,16 @@ import Background from "@/components/organisms/Background"
 import Modal from "@/components/organisms/Modal"
 import { useWordsContext } from "@/context/wordsContext"
 import { useCallback, useEffect, useState } from "react"
-import { useOpenModal } from "@/hooks/useOpenModal"
 import { alphabet } from "@/data/alphabet"
+import { useSettingsContext } from "@/context/settingsContext"
+
 
 const CategoryPage = () => {
   const [openLooseModal, setOpenLooseModal] = useState<boolean>(false)
   const [openWinnerModal, setOpenWinnerModal] = useState<boolean>(false)
 
   const { isWinner, showResult, setSelectedLetters, lifeCounter, totalMoves, restartGame } = useWordsContext()
+  const { text } = useSettingsContext()
 
   const handleOpenLooseModal = useCallback(() => {
     if (lifeCounter === totalMoves) {
@@ -62,17 +64,17 @@ const CategoryPage = () => {
       </CategoryPageContainer>
 
       <Modal
-        title="You Won"
+        title={text.youWon}
         open={isWinner && openWinnerModal}
         action={restartGame}
-        actionLabel="Play Again"
+        actionLabel={text.playAgain}
       />
 
       <Modal
-        title="You Lose"
+        title={text.youLose}
         open={openLooseModal}
         action={restartGame}
-        actionLabel="Play Again"
+        actionLabel={text.playAgain}
       />
     </>
   )

@@ -1,30 +1,10 @@
-import Link from "next/link";
-import { PageBottomActions, PageBox, PageContainer } from "./PageStyled";
-import PlayButton from "@/components/atoms/PlayButton";
-import MainTitle from "@/components/molecules/MainTitle";
-import Button from "@/components/atoms/Button";
-import IconButton from "@/components/atoms/IconButton";
-import SettingsIcon from "@/components/Icons/SettingsIcon";
-import { SettingsTab } from "@/types/settings";
+import { PageContainer } from "./PageStyled";
+import HomeCard from "@/components/organisms/HomeCard";
 
 export default function Home() {
   return (
     <PageContainer>
-      <PageBox>
-        <MainTitle />
-        <PlayButton />
-
-        <PageBottomActions>
-          <Button label='How to Play' />
-
-          <Link href={`/settings?tab=${SettingsTab.THEME}`}>
-            <IconButton size="small" variant="secondary">
-              <SettingsIcon size="small" />
-            </IconButton>
-          </Link>
-        </PageBottomActions>
-
-      </PageBox>
+      <HomeCard />
     </PageContainer>
   );
 }

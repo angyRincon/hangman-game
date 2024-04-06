@@ -5,6 +5,7 @@ import { LoseModalContent } from "./ModalStyled"
 import Button from "@/components/atoms/Button"
 import { useWordsContext } from "@/context/wordsContext"
 import { useRouter } from "next/navigation"
+import { useSettingsContext } from "@/context/settingsContext"
 
 interface ModalProps {
     open: boolean,
@@ -14,12 +15,13 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ open, title, action, actionLabel }) => {
+    const { text } = useSettingsContext()
     const { restartGame } = useWordsContext()
     const router = useRouter()
 
     const handleAction = (redirectRoute: string) => {
         router.push(redirectRoute)
-        restartGame()
+        setTimeout(() => restartGame(), 1000)
     }
 
     const handleNewCategory = () => {
@@ -35,8 +37,8 @@ const Modal: FC<ModalProps> = ({ open, title, action, actionLabel }) => {
         <ModalTemplate title={title}>
             <LoseModalContent>
                 <Button onClick={action} label={actionLabel} />
-                <Button onClick={handleNewCategory} label="New Category" />
-                <Button onClick={handleQuitGame} label="Quit Game" variant="secondary" />
+                <Button onClick={handleNewCategory} label={text.newCategory} />
+                <Button onClick={handleQuitGame} variant="secondary" label={text.quitGame} />
             </LoseModalContent>
         </ModalTemplate>
     )

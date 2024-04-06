@@ -7,21 +7,3 @@ export const PageContainer = styled.div`
     justify-content: center;
     height: 100%;
 `
-
-export const PageBox = styled.div`
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(100px, 400px);
-    background-color: ${({ theme }) => theme.primary.main};
-    place-items: center;
-    min-height: 370px;
-    border-radius: 20px;
-    gap: 20px;
-    padding: 20px 0 40px 0;
-`
-
-export const PageBottomActions = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 20px;
-`

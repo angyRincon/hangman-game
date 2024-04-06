@@ -1,7 +1,5 @@
 'use client'
-import { categoriesMap } from "@/data/categories/categories";
 import { useCategory } from "@/hooks/useCategory";
-import { useParams } from "next/navigation";
 import { FC, ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 interface WordsContextProps {
@@ -38,11 +36,9 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
     const [selectedLetters, setSelectedLetters] = useState<string[]>([])
     const [lifeCounter, setLifeCounter] = useState<number>(0)
 
-    const { category: categoryId } = useParams()
+    const { category, categoryArray, getRandomCategory } = useCategory()
 
-    const { category, categoryArray, getRandomCategory } = useCategory(categoryId as string)
-    
-    // console.log('-', category)
+    console.log('wenas', category)
 
     const totalMoves = 8
 

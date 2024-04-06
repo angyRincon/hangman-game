@@ -1,26 +1,14 @@
+'use client'
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon"
 import IconButton from "@/components/atoms/IconButton"
 import TabNavigation from "@/components/molecules/TabNavigation"
 import Link from "next/link"
 import { SettingsCardHeaderContainer, SettingsCardTitle, SettingsCardTitleContainer } from "./SettingsCardHeaderStyled"
-import { TabProps } from "@/components/molecules/TabNavigation/types"
-
-const tabItems:TabProps[] = [
-    {
-        id: 'theme',
-        label: 'Theme'
-    },
-    {
-        id: 'language',
-        label: 'Language'
-    },
-    {
-        id: 'font',
-        label: 'Font'
-    }
-]
+import { useSettingsContext } from "@/context/settingsContext"
 
 const SettingsCardHeader = () => {
+    const { text, tabItems } = useSettingsContext()
+
     return (
         <SettingsCardHeaderContainer>
             <SettingsCardTitleContainer>
@@ -30,7 +18,7 @@ const SettingsCardHeader = () => {
                     </IconButton>
                 </Link>
                 <SettingsCardTitle>
-                    Settings
+                    {text.settings}
                 </SettingsCardTitle>
             </SettingsCardTitleContainer>
 

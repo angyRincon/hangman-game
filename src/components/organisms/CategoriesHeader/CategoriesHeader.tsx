@@ -1,10 +1,13 @@
+'use client'
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon"
 import IconButton from "@/components/atoms/IconButton"
 import HeaderTemplate from "@/components/templates/HeaderTemplate"
 import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/templates/HeaderTemplate/HeaderTemplateStyled"
+import { useSettingsContext } from "@/context/settingsContext"
 import Link from "next/link"
 
 const CategoriesHeader = () => {
+    const { text } = useSettingsContext()
     return (
         <HeaderTemplate>
             <HeaderLeftItems>
@@ -16,7 +19,7 @@ const CategoriesHeader = () => {
             </HeaderLeftItems>
 
             <HeaderRightItems>
-                <HeaderTitle>Pick a Category</HeaderTitle>
+                <HeaderTitle>{text.pickACategory}</HeaderTitle>
             </HeaderRightItems>
         </HeaderTemplate>
     )

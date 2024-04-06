@@ -29,3 +29,8 @@ export interface Settings {
     language: LanguageType
     theme: ThemeType
 }
+
+export interface SettingsTabItems {
+    id: string;
+    label: string;
+}

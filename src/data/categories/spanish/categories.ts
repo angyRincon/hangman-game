@@ -5,37 +5,35 @@ import capitalCities from './capitalCities.json'
 import animals from './animals.json'
 import sports from './sports.json'
 
-export const categories = [
+export const spanishCategories = [
     {
         id: 'movies',
-        label: 'Movies',
+        label: 'Películas',
         data: movies
     },
     {
         id: 'tv-shows',
-        label: 'TV Shows',
+        label: 'Series',
         data: tvShows
     },
     {
         id: 'countries',
-        label: 'Countries',
+        label: 'Países',
         data: countries
     },
     {
         id: 'capital-cities',
-        label: 'Capital Cities',
+        label: 'Ciudades Capitales',
         data: capitalCities
     },
     {
         id: 'animals',
-        label: 'Animals',
+        label: 'Animales',
         data: animals
     },
     {
         id: 'sports',
-        label: 'Sports',
+        label: 'Deportes',
         data: sports
     }
 ]
-
-export const categoriesMap = new Map(categories.map(c => [c.id, c]))

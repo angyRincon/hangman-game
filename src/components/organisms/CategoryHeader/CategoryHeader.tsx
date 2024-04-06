@@ -11,11 +11,14 @@ import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/tem
 import Modal from "../Modal"
 import { LifePointsContainer, LifePointsValue } from "./CategoryHeaderStyled"
 import { useParams } from "next/navigation"
-import { categoriesMap } from "@/data/categories/categories"
+import { useCategory } from "@/hooks/useCategory"
+import { useSettingsContext } from "@/context/settingsContext"
 
 const CategoryHeader = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const { lifeCounter, totalMoves } = useWordsContext()
+    const { categoriesMap } = useCategory()
+    const { text } = useSettingsContext()
 
     const { category: categoryId } = useParams()
 
@@ -50,10 +53,10 @@ const CategoryHeader = () => {
             </HeaderTemplate>
 
             <Modal
-                title="Paused"
+                title={text.paused}
                 open={openMenu}
                 action={handleCloseMenu}
-                actionLabel="Continue"
+                actionLabel={text.continue}
             />
         </>
     )
