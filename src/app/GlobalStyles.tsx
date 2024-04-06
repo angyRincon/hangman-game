@@ -1,7 +1,26 @@
 'use client'
+import { FontFamilyType, FontTypeEnum } from "@/types/settings";
 import { Global, css, useTheme } from "@emotion/react";
+import { FC } from "react";
 
-const GlobalStyles = () => {
+interface GlobalStylesProps {
+    fontType: FontFamilyType | undefined
+}
+
+export const getFontFamily = (fontType: FontFamilyType | undefined) => {
+    switch (fontType) {
+        case FontTypeEnum.LORA:
+            return `Lora, serif`
+        case FontTypeEnum.MERIENDA:
+            return `Merienda, cursive`
+        case FontTypeEnum.QUICKSAND:
+            return `Quicksand, sans-serif`
+        default:
+            return `Lora, serif`
+    }
+}
+
+const GlobalStyles: FC<GlobalStylesProps> = ({ fontType }) => {
     const theme = useTheme()
 
     const globalStyles = css`
@@ -9,6 +28,9 @@ const GlobalStyles = () => {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+        font-family: ${getFontFamily(fontType)};
+        font-optical-sizing: auto;
+        font-style: normal;
         }
 
         html,
@@ -31,6 +53,7 @@ const GlobalStyles = () => {
         button {
         font-family: inherit;
         }
+
 
 `
     return (

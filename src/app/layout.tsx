@@ -18,7 +18,12 @@ export const metadata: Metadata = {
 const RootLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={fontFamily.className}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+      </head>
+      <body>
         <Providers>
           <Suspense fallback={<Loading />}>
             {children}

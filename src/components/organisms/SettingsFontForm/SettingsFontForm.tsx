@@ -1,15 +1,10 @@
 'use client'
-import { Lora, Merienda, Quicksand } from "next/font/google";
 import SettingsFormTemplate from "@/components/templates/SettingsFormTemplate"
 import { useSettingsContext } from "@/context/settingsContext"
 import { FontTypeEnum, FontFamilyType } from "@/types/settings"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { SettingsFormElements } from "@/components/templates/SettingsFormTemplate/SettingsFormTemplate";
 import { setCookie } from "@/helpers/cookies";
-
-const lora = Lora({ subsets: ["latin"] });
-const merienda = Merienda({ subsets: ["latin"] });
-const quicksand = Quicksand({ subsets: ["latin"] });
 
 const SettingsFontForm = () => {
     const { text, settings } = useSettingsContext()
@@ -20,15 +15,16 @@ const SettingsFontForm = () => {
 
         switch (value) {
             case FontTypeEnum.LORA:
-                setFontType(FontTypeEnum.LORA)
+                return setFontType(FontTypeEnum.LORA)
             case FontTypeEnum.MERIENDA:
-                setFontType(FontTypeEnum.MERIENDA)
+                return setFontType(FontTypeEnum.MERIENDA)
             case FontTypeEnum.QUICKSAND:
-                setFontType(FontTypeEnum.QUICKSAND)
+                return setFontType(FontTypeEnum.QUICKSAND)
             default:
-                setFontType(FontTypeEnum.LORA)
+                return setFontType(FontTypeEnum.LORA)
         }
     }
+
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -39,21 +35,21 @@ const SettingsFontForm = () => {
         {
             value: FontTypeEnum.LORA,
             label: text.lora,
-            labelStyle: lora,
+            labelStyle: FontTypeEnum.LORA,
             onChange: handleChange,
             checked: fontType === FontTypeEnum.LORA
         },
         {
             value: FontTypeEnum.MERIENDA,
             label: text.merienda,
-            labelStyle: merienda,
+            labelStyle: FontTypeEnum.MERIENDA,
             onChange: handleChange,
             checked: fontType === FontTypeEnum.MERIENDA
         },
         {
             value: FontTypeEnum.QUICKSAND,
             label: text.quickSand,
-            labelStyle: quicksand,
+            labelStyle: FontTypeEnum.QUICKSAND,
             onChange: handleChange,
             checked: fontType === FontTypeEnum.QUICKSAND
         },

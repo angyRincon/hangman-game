@@ -2,13 +2,13 @@ import InputRadio from "@/components/atoms/InputRadio"
 import { SettingsCardForm } from "./SettingsFormTemplateStyled"
 import { ChangeEvent, FC, FormEvent, ReactNode } from "react";
 import Button from "@/components/atoms/Button";
-import { NextFont } from "next/dist/compiled/@next/font";
+import { FontFamilyType } from "@/types/settings";
 
 export interface SettingsFormElements {
     value: string;
     label: string;
     checked: boolean;
-    labelStyle?: NextFont;
+    labelStyle?: FontFamilyType;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
