@@ -44,7 +44,8 @@ export const InputRadioLabel = styled.label<{ $labelStyle: FontFamilyType | unde
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 18px;
-    font-family: ${({ $labelStyle }) => getFontFamily($labelStyle)};
+    font-family: ${({ $labelStyle }) => $labelStyle ? getFontFamily($labelStyle) : 'inherit'};
+    font-weight: 500;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

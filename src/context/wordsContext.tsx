@@ -5,6 +5,7 @@ import { FC, ReactNode, createContext, useContext, useEffect, useState } from "r
 interface WordsContextProps {
     movie: string[] | null,
     isWinner: boolean,
+    isLooser: boolean,
     lifeCounter: number,
     totalMoves: number,
     selectedLetters: string[],
@@ -18,6 +19,7 @@ interface WordsContextProps {
 const initialValues: WordsContextProps = {
     movie: [],
     isWinner: false,
+    isLooser: false,
     totalMoves: 0,
     lifeCounter: 0,
     selectedLetters: [],
@@ -38,9 +40,8 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
 
     const { category, categoryArray, getRandomCategory } = useCategory()
 
-    console.log('wenas', category)
-
     const totalMoves = 8
+    const isLooser = lifeCounter === totalMoves
 
     const selectLetter = (letter: string) => {
         setSelectedLetters([...selectedLetters, letter])
@@ -82,6 +83,7 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
     const values = {
         movie,
         isWinner,
+        isLooser,
         setMovie,
         totalMoves,
         lifeCounter,

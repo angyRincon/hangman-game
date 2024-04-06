@@ -7,7 +7,6 @@ import Background from "@/components/organisms/Background"
 import Modal from "@/components/organisms/Modal"
 import { useWordsContext } from "@/context/wordsContext"
 import { useCallback, useEffect, useState } from "react"
-import { alphabet } from "@/data/alphabet"
 import { useSettingsContext } from "@/context/settingsContext"
 
 
@@ -15,11 +14,11 @@ const CategoryPage = () => {
   const [openLooseModal, setOpenLooseModal] = useState<boolean>(false)
   const [openWinnerModal, setOpenWinnerModal] = useState<boolean>(false)
 
-  const { isWinner, showResult, setSelectedLetters, lifeCounter, totalMoves, restartGame } = useWordsContext()
-  const { text } = useSettingsContext()
+  const { isWinner, isLooser, showResult, setSelectedLetters, lifeCounter, totalMoves, restartGame } = useWordsContext()
+  const { text, alphabet } = useSettingsContext()
 
   const handleOpenLooseModal = useCallback(() => {
-    if (lifeCounter === totalMoves) {
+    if (isLooser) {
       showResult()
       setSelectedLetters(alphabet)
       setTimeout(() => {

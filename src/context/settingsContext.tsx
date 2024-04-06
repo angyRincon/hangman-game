@@ -1,5 +1,6 @@
 'use client'
 import Loading from "@/app/loading";
+import { englsighAlphabet, spanishAlphabet } from "@/data/alphabet";
 import { englishCategories } from "@/data/categories/english/categories";
 import { spanishCategories } from "@/data/categories/spanish/categories";
 import { englishText, spanishText } from "@/data/projectTexts/texts";
@@ -17,6 +18,7 @@ interface ThemeContextProps {
     text: TextTypes,
     categories: CategoryItem[]
     tabItems: SettingsTabItems[]
+    alphabet: string[]
 }
 
 export const initialSettingsContext: ThemeContextProps = {
@@ -24,6 +26,7 @@ export const initialSettingsContext: ThemeContextProps = {
     text: {} as TextTypes,
     categories: {} as CategoryItem[],
     tabItems: {} as SettingsTabItems[],
+    alphabet: []
 }
 
 const ThemeContext = createContext(initialSettingsContext)
@@ -44,25 +47,28 @@ export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProvi
     }, [])
 
 
-    const getLanguageText = () => {
+    const getLanguageItems = () => {
         switch (settings?.language) {
             case LanguageEnum.ENGLISH:
                 return {
                     text: englishText,
                     categories: englishCategories,
-                    tabItems: englishTabItems
+                    tabItems: englishTabItems,
+                    alphabet: englsighAlphabet
                 }
             case LanguageEnum.SPANISH:
                 return {
                     text: spanishText,
                     categories: spanishCategories,
-                    tabItems: spanishTabItems
+                    tabItems: spanishTabItems,
+                    alphabet: spanishAlphabet
                 }
             default:
                 return {
                     text: englishText,
                     categories: englishCategories,
-                    tabItems: englishTabItems
+                    tabItems: englishTabItems,
+                    alphabet: englsighAlphabet
                 }
         }
     }
@@ -80,9 +86,10 @@ export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProvi
 
     const values = {
         settings,
-        text: getLanguageText().text,
-        categories: getLanguageText().categories,
-        tabItems: getLanguageText().tabItems
+        text: getLanguageItems().text,
+        categories: getLanguageItems().categories,
+        tabItems: getLanguageItems().tabItems,
+        alphabet: getLanguageItems().alphabet
     }
 
     if (!settings) return <Loading />

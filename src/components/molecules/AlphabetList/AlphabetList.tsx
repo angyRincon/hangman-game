@@ -1,9 +1,11 @@
+'use client'
 import AlphabetCard from '@/components/atoms/AlphabetCard'
-import { alphabet } from "@/data/alphabet"
 import { AlphabetListContainer } from './AlphabetListStyled'
+import { useSettingsContext } from '@/context/settingsContext'
 
 
 const AlphabetList = () => {
+    const { alphabet } = useSettingsContext()
     return (
         <AlphabetListContainer>
             {
