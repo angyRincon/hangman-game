@@ -9,7 +9,7 @@ export const InputRadioSpan = styled.span`
     left: 0;
     height: 16px;
     width: 16px;
-    background-color: #eee;
+    background-color: ${({theme}) => theme.colors.gray[300]};
     border-radius: 50%;
 
     &:after {

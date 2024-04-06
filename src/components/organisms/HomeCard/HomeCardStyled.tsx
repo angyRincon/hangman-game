@@ -11,6 +11,7 @@ export const HomeCardContainer = styled.div`
     border-radius: 20px;
     gap: 20px;
     padding: 20px 0 40px 0;
+    box-shadow: ${({theme}) => theme.cardShadow};
 `
 
 export const HomeCardFooter = styled.div`

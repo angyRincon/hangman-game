@@ -37,7 +37,8 @@ export const spanishText: TextTypes = {
     spanish: 'Español',
     lora: 'Lora',
     merienda: 'Merienda',
-    quickSand: 'Quicksand'
+    quickSand: 'Quicksand',
+     loading: 'Cargando'
 }
 
 export const englishText: TextTypes = {
@@ -82,5 +83,6 @@ export const englishText: TextTypes = {
     spanish: 'Spanish',
     lora: 'Lora',
     merienda: 'Merienda',
-    quickSand: 'Quicksand'
+    quickSand: 'Quicksand',
+    loading: 'Loading'
 };

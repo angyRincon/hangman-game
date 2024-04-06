@@ -21,6 +21,6 @@ export const TabContainer = styled.li<{ $isActive: boolean }>`
 `
 
 export const TabLabel = styled(Link)`
-    color: ${({ theme }) => theme.colors.gray[50]};
+    color: ${({ theme }) => theme.primary.contrastText};
     font-weight: 500;
 `

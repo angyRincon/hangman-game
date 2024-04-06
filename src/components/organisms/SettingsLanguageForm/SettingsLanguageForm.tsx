@@ -16,7 +16,6 @@ const SettingsLanguageForm = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setCookie('settings', { ...settings, language })
-
     }
 
     const elements: SettingsFormElements[] = [

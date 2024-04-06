@@ -32,4 +32,5 @@ export type TextTypes = {
     lora: string;
     merienda: string;
     quickSand: string;
+    loading: string;
   };

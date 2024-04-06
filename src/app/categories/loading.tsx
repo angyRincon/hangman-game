@@ -1,8 +1,8 @@
+import LoaderTemplate from "@/components/templates/LoaderTemplate"
+
 const CategoryLoader = () => {
     return (
-        <div style={{zIndex: 999999}}>
-            CARAGANDO CATEGORRRIIAAASSS
-        </div>
+        <LoaderTemplate />
     )
 }
 export default CategoryLoader

@@ -16,6 +16,7 @@ const CategoriesPage = () => {
                 <CategoriesPageContent>
                     {categories.map(category => (
                         <CategoryItem
+                            key={category.id}
                             href={`/categories/${category.id}`}
                             label={category.label}
                         />

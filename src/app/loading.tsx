@@ -1,8 +1,8 @@
+import LoaderTemplate from "@/components/templates/LoaderTemplate"
+
 const Loading = () => {
     return (
-        <div>
-            CARGANDOOOOOO....
-        </div>
+        <LoaderTemplate />
     )
 }
 

@@ -11,19 +11,20 @@ export const AlphabetCardButton = styled.button`
     font-weight: 700;
     font-size: 20px;
     transition: .5s;
-
-    ${({theme}) => ({
+    box-shadow: ${({ theme }) => theme.buttonShadow};
+    
+    ${({ theme }) => ({
         background: theme.primary.main,
         color: theme.primary.contrastText
     })}
     
     &:hover:not(:disabled) {
         cursor: pointer;
-        background-color: #e1ebff;
+        background-color: ${({ theme }) => theme.colors.gray[400]};
     }
 
     &:disabled{
-        opacity: 0.5;
+        opacity: 0.6;
         cursor: auto;
     }
 `

@@ -2,6 +2,8 @@ import '@emotion/react'
 
 declare module '@emotion/react' {
     export interface Theme {
+        buttonShadow: string;
+        cardShadow: string;
         background: string;
         primary: {
             main: string,
@@ -37,7 +39,7 @@ declare module '@emotion/react' {
                 '800': string,
                 '900': string,
                 '950': string,
-            }
-        }
+            },
+        },
     }
 }

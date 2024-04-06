@@ -1,46 +1,50 @@
 import { Theme } from "@emotion/react"
 
 export const lightTheme: Theme = {
-    background: '#f3f7fa',
+    buttonShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
+    cardShadow: 'rgba(0, 0, 0, 0.16) 0px 5px 15px',
+    background: '#cae3ed',
     primary: {
-        main: '#8b9ec9',
-        contrastText: '#232a2e'
+        main: '#e7f2f7',
+        contrastText: '#0b2728'
     },
     secondary: {
-        main: '#9d40b9',
-        contrastText: '#fbf5ff'
+        main: '#af70c2',
+        contrastText: '#fbf8fc'
     },
     colors: {
         gray: {
-            '50': '#f3f7fa',
-            '100': '#e9f0f6',
-            '200': '#d6e2ef',
-            '300': '#becfe3',
-            '400': '#a6b9d8',
-            '500': '#8b9ec9',
-            '600': '#7383b8',
-            '700': '#616ea1',
-            '800': '#505c83',
-            '900': '#454e6a',
-            '950': '#292e3d',
+            '50': '#f4f8fb',
+            '100': '#e7f2f7',
+            '200': '#cae3ed',
+            '300': '#84c2d7',
+            '400': '#65b3cb',
+            '500': '#419ab6',
+            '600': '#307c99',
+            '700': '#28647c',
+            '800': '#245568',
+            '900': '#234857',
+            '950': '#172e3a',
         },
         purple: {
-            '50': '#fbf6fd',
-            '100': '#f6ecfb',
-            '200': '#edd7f7',
-            '300': '#d8a2eb',
-            '400': '#d08de5',
-            '500': '#b960d5',
-            '600': '#9d40b9',
-            '700': '#843398',
-            '800': '#6e2b7d',
-            '900': '#5d2867',
-            '950': '#3a0f43',
-        }
+            '50': '#fbf8fc',
+            '100': '#f6eef9',
+            '200': '#efe0f4',
+            '300': '#e2c7eb',
+            '400': '#cfa2de',
+            '500': '#ba7ece',
+            '600': '#af70c2',
+            '700': '#904da3',
+            '800': '#784386',
+            '900': '#62376c',
+            '950': '#431f4c',
+        },
     }
 }
 
 export const darkTheme: Theme = {
+    buttonShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+    cardShadow: 'rgba(0, 0, 0, 0.16) 0px 5px 15px',
     background: '#111112',
     primary: {
         main: '#3b3b3e',
@@ -76,6 +80,7 @@ export const darkTheme: Theme = {
             '800': '#722e7a',
             '900': '#602a65',
             '950': '#3c1141',
-        }
+        },
+
     }
 }

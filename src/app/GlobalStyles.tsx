@@ -1,7 +1,7 @@
 'use client'
+import { FC } from "react";
 import { FontFamilyType, FontTypeEnum } from "@/types/settings";
 import { Global, css, useTheme } from "@emotion/react";
-import { FC } from "react";
 
 interface GlobalStylesProps {
     fontType: FontFamilyType | undefined

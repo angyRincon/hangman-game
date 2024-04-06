@@ -1,28 +1,34 @@
 'use client'
 import styled from '@emotion/styled'
 import { ButtonVariantType } from './Button'
-import { Theme } from '@emotion/react'
+import { Theme, css } from '@emotion/react'
+import { SvgWrapper } from '@/components/Icons/IconStyled'
 
 export const buttonVariantStyle = (theme: Theme, variant: ButtonVariantType) => {
     if (variant === 'primary') {
-        return {
-            color: theme.primary.main,
-            background: theme.primary.contrastText,
-            '&:hover': {
-                color: theme.primary.contrastText,
-                background: theme.colors.gray[800],
-            }
-        }
+        return css`
+            background: ${theme.colors.gray[600]};
+            color: ${theme.colors.gray[50]};
+            &:hover {
+                background: ${theme.colors.gray[50]};
+                color: ${theme.colors.gray[600]};
+                ${SvgWrapper} {
+                    fill: ${theme.primary.main};
+                }
+        }`
     }
     if (variant === 'secondary') {
-        return {
-            background: theme.secondary.main,
-            color: theme.secondary.contrastText,
-            '&:hover': {
-                color: theme.secondary.contrastText,
-                background: theme.colors.purple[400],
+        return css`
+            background: ${theme.secondary.main};
+            color: ${theme.secondary.contrastText};
+            &:hover {
+                background: ${theme.secondary.contrastText};
+                color: ${theme.secondary.main};
+                ${SvgWrapper} {
+                   fill: ${theme.secondary.main};
+                }
             }
-        }
+        `
     }
 }
 
@@ -37,6 +43,6 @@ export const ButtonContainer = styled.button<{ $variant: ButtonVariantType }>`
     cursor: pointer;
     outline: none;
     transition: background .3s;
-
+    box-shadow: ${({ theme }) => theme.buttonShadow};
     ${({ theme, $variant }) => buttonVariantStyle(theme, $variant)}
 `

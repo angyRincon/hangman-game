@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { IconButtonSize } from './IconButton'
 import { buttonVariantStyle } from '../Button/ButtonStyled'
 import { ButtonVariantType } from '../Button/Button'
+import { SvgWrapper } from '@/components/Icons/IconStyled'
 
 export const IconButtonContainer = styled.button<{ $size: IconButtonSize, $variant: ButtonVariantType }>`
     display: flex;
