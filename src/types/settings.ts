@@ -15,17 +15,17 @@ export enum LanguageEnum {
 }
 
 export enum FontTypeEnum {
-    LORA = 'Lora',
-    MERIENDA = 'Merienda',
-    QUICKSAND = 'Quicksand'
+    LORA = 'lora',
+    MERIENDA = 'merienda',
+    QUICKSAND = 'quicksand'
 }
 
 export type ThemeType = ThemeEnum.DARK | ThemeEnum.LIGHT
 export type LanguageType = LanguageEnum.ENGLISH | LanguageEnum.SPANISH
-export type FontType = FontTypeEnum.LORA | FontTypeEnum.MERIENDA | FontTypeEnum.QUICKSAND
+export type FontFamilyType = FontTypeEnum.LORA | FontTypeEnum.MERIENDA | FontTypeEnum.QUICKSAND
 
 export interface Settings {
-    fontType: FontType
+    fontType: FontFamilyType
     language: LanguageType
     theme: ThemeType
 }

@@ -29,4 +29,7 @@ export type TextTypes = {
     continue: string;
     english: string;
     spanish: string;
+    lora: string;
+    merienda: string;
+    quickSand: string;
   };

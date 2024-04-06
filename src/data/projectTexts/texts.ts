@@ -34,7 +34,10 @@ export const spanishText: TextTypes = {
     continue: 'Continuar',
     paused: 'Pausado',
     english: 'Inglés',
-    spanish: 'Español'
+    spanish: 'Español',
+    lora: 'Lora',
+    merienda: 'Merienda',
+    quickSand: 'Quicksand'
 }
 
 export const englishText: TextTypes = {
@@ -76,5 +79,8 @@ export const englishText: TextTypes = {
     continue: 'Continue',
     paused: 'Paused',
     english: 'English',
-    spanish: 'Spanish'
+    spanish: 'Spanish',
+    lora: 'Lora',
+    merienda: 'Merienda',
+    quickSand: 'Quicksand'
 };

@@ -2,11 +2,13 @@ import InputRadio from "@/components/atoms/InputRadio"
 import { SettingsCardForm } from "./SettingsFormTemplateStyled"
 import { ChangeEvent, FC, FormEvent, ReactNode } from "react";
 import Button from "@/components/atoms/Button";
+import { NextFont } from "next/dist/compiled/@next/font";
 
 export interface SettingsFormElements {
     value: string;
     label: string;
     checked: boolean;
+    labelStyle?: NextFont;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -25,6 +27,7 @@ const SettingsFormTemplate: FC<SettingsFormProps> = ({ elements, submitLabel, on
                     key={element.value}
                     value={element.value}
                     label={element.label}
+                    labelStyle={element.labelStyle}
                     checked={element.checked}
                     onChange={element.onChange}
                 />
