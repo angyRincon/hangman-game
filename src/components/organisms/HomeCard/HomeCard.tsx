@@ -8,9 +8,15 @@ import { SettingsTab } from "@/types/settings"
 import Link from "next/link"
 import { HomeCardContainer, HomeCardFooter } from "./HomeCardStyled"
 import { useSettingsContext } from "@/context/settingsContext"
+import { navigate } from "@/app/actions"
 
 const HomeCard = () => {
     const { text } = useSettingsContext()
+
+    const handleNavigate = () => {
+        navigate('/how-to-play')
+    }
+
     return (
         <HomeCardContainer>
             <MainTitle />
@@ -18,7 +24,7 @@ const HomeCard = () => {
             <PlayButton />
 
             <HomeCardFooter>
-                <Button label={text.howToPlay} />
+                <Button label={text.howToPlay} onClick={handleNavigate} />
 
                 <Link href={`/settings?tab=${SettingsTab.THEME}`}>
                     <IconButton size="small" variant="secondary">

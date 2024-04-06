@@ -84,5 +84,5 @@ export const englishText: TextTypes = {
     lora: 'Lora',
     merienda: 'Merienda',
     quickSand: 'Quicksand',
-    loading: 'Loading'
+    loading: 'Loading',
 };

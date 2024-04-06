@@ -1,8 +1,11 @@
 'use client'
 import Loading from "@/app/loading";
+import { HowToPlayCardProps } from "@/components/molecules/HowToPlayCard/HowToPlayCard";
 import { englsighAlphabet, spanishAlphabet } from "@/data/alphabet";
 import { englishCategories } from "@/data/categories/english/categories";
 import { spanishCategories } from "@/data/categories/spanish/categories";
+import { howToPlayEnglishInfo } from "@/data/howToPlay/english";
+import { howToPlaySpanishInfo } from "@/data/howToPlay/spanish";
 import { englishText, spanishText } from "@/data/projectTexts/texts";
 import { englishTabItems, initialSettings, spanishTabItems } from "@/data/settings/config";
 import { setCookie } from "@/helpers/cookies";
@@ -19,6 +22,7 @@ interface ThemeContextProps {
     categories: CategoryItem[]
     tabItems: SettingsTabItems[]
     alphabet: string[]
+    howToPlayItems: HowToPlayCardProps[]
 }
 
 export const initialSettingsContext: ThemeContextProps = {
@@ -26,7 +30,8 @@ export const initialSettingsContext: ThemeContextProps = {
     text: {} as TextTypes,
     categories: {} as CategoryItem[],
     tabItems: {} as SettingsTabItems[],
-    alphabet: []
+    alphabet: [],
+    howToPlayItems: []
 }
 
 const ThemeContext = createContext(initialSettingsContext)
@@ -54,21 +59,24 @@ export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProvi
                     text: englishText,
                     categories: englishCategories,
                     tabItems: englishTabItems,
-                    alphabet: englsighAlphabet
+                    alphabet: englsighAlphabet,
+                    howToPlayItems: howToPlayEnglishInfo
                 }
             case LanguageEnum.SPANISH:
                 return {
                     text: spanishText,
                     categories: spanishCategories,
                     tabItems: spanishTabItems,
-                    alphabet: spanishAlphabet
+                    alphabet: spanishAlphabet,
+                    howToPlayItems: howToPlaySpanishInfo
                 }
             default:
                 return {
                     text: englishText,
                     categories: englishCategories,
                     tabItems: englishTabItems,
-                    alphabet: englsighAlphabet
+                    alphabet: englsighAlphabet,
+                    howToPlayItems: howToPlayEnglishInfo
                 }
         }
     }
@@ -89,7 +97,8 @@ export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProvi
         text: getLanguageItems().text,
         categories: getLanguageItems().categories,
         tabItems: getLanguageItems().tabItems,
-        alphabet: getLanguageItems().alphabet
+        alphabet: getLanguageItems().alphabet,
+        howToPlayItems: getLanguageItems().howToPlayItems
     }
 
     if (!settings) return <Loading />
