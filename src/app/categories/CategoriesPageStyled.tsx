@@ -1,21 +1,26 @@
 'use client'
-import { BackgroundStyle } from '@/components/organisms/Background/BackgroundStyled'
 import styled from '@emotion/styled'
+import { PageContainer } from '../PageStyled'
+import device from '@/helpers/devices'
 
-export const CategoriesPageContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+export const CategoriesPageContainer = styled(PageContainer)`
+    @media ${device.tablet} {
+        height: unset;
+    }
 `
 
 export const CategoriesPageContent = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, minmax(100px, 300px));
     gap: 20px;
-`
-
-export const CategoriesBackground = styled(BackgroundStyle)`
-    top: -100px;
-    opacity: 0.3;
+    padding: 0 10px;
+    
+    @media ${device.tablet} {
+        grid-template-columns: repeat(2, minmax(100px, 300px));
+        padding: 30px 10px 0 10px;
+    }
+    
+    @media ${device.phone} {
+        grid-template-columns: repeat(2, minmax(100px, 300px));
+    }
 `

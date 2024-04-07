@@ -1,6 +1,6 @@
 'use client'
 import CategoryItem from "@/components/molecules/CategoryItem"
-import { CategoriesPageContent } from "./CategoriesPageStyled"
+import { CategoriesPageContainer, CategoriesPageContent } from "./CategoriesPageStyled"
 import CategoriesHeader from "@/components/organisms/CategoriesHeader"
 import { PageContainer } from "../PageStyled"
 import { useSettingsContext } from "@/context/settingsContext"
@@ -12,7 +12,7 @@ const CategoriesPage = () => {
     return (
         <>
             <CategoriesHeader />
-            <PageContainer>
+            <CategoriesPageContainer>
                 <CategoriesPageContent>
                     {categories.map(category => (
                         <CategoryItem
@@ -22,7 +22,7 @@ const CategoriesPage = () => {
                         />
                     ))}
                 </CategoriesPageContent>
-            </PageContainer>
+            </CategoriesPageContainer>
         </>
     )
 }
