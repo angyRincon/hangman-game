@@ -1,4 +1,5 @@
 'use client'
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const HeaderTemplateContainer = styled.nav`
@@ -9,6 +10,11 @@ export const HeaderTemplateContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 30px 60px;
+
+    @media ${device.tablet} {
+        position: relative;
+        padding: 30px 30px;
+    }
 `
 
 const HeaderSides = styled.div`
@@ -20,6 +26,9 @@ const HeaderSides = styled.div`
 export const HeaderTitle = styled.h1`
     color: ${({ theme }) => theme.primary.contrastText};
     font-size: 35px;
+    @media ${device.phone} {
+        font-size: 30px;
+    }
 `
 
 export const HeaderLeftItems = styled(HeaderSides)``

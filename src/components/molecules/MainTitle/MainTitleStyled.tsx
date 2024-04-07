@@ -4,7 +4,9 @@ import styled from '@emotion/styled'
 export const MainTitleContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: -100px;
+    width: 100%;
+    align-self: flex-start;
+    padding: 0 30px;
 `
 
 export const ManinText = styled.h1`
@@ -20,10 +22,8 @@ export const SmallText = styled.p`
     font-weight: 700;
     color: ${({theme}) => theme.primary.contrastText};
     margin-left: 30px;
-    `
+`
 
 export const SmallBottomText = styled(SmallText)`
-    text-align: right;
-    margin-right: 20px;
-    margin-left: unset;
+    margin-left: 100px;
 `

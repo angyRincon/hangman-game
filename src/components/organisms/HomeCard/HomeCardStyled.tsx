@@ -1,4 +1,5 @@
 'use client'
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const HomeCardContainer = styled.div`

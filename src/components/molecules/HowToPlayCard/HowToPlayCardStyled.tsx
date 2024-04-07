@@ -1,3 +1,4 @@
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const HowToPlayCardContainer = styled.div`
@@ -13,6 +14,20 @@ export const HowToPlayCardContainer = styled.div`
         boxShadow: theme.cardShadow,
         background: theme.primary.main,
     })}
+
+
+   @media ${device.tablet} {
+        &:last-child {
+            grid-column: 1 / span 2;
+        }
+    }
+
+    @media ${device.phone} {
+        &:last-child {
+            grid-column: unset;
+        }
+    }
+
 `
 
 export const HowToPlayCardPosition = styled.h1`
