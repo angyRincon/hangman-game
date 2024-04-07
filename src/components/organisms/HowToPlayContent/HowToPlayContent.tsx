@@ -13,6 +13,7 @@ const HowToPlayContent: FC<HowToPlayContentProps> = ({ elements }) => {
             <HowToPlayContentContainer>
                 {elements.map(element => (
                     <HowToPlayCard
+                        key={element.position}
                         position={element.position}
                         title={element.title}
                         content={element.content}

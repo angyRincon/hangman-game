@@ -1,10 +1,10 @@
 import Tab from "@/components/atoms/Tab"
 import { TabNavigationContainer, TabNavigationListContainer } from "./TabNavigationStyled"
 import { FC } from "react"
-import { TabProps } from "./types"
+import { SettingsTabItems } from "@/types/settings"
 
 interface TabNavigationProps {
-    tabItems: TabProps[]
+    tabItems: SettingsTabItems[]
 }
 
 const TabNavigation: FC<TabNavigationProps> = ({ tabItems }) => {
