@@ -12,6 +12,7 @@ export const CategoryHeaderContainer = styled.div`
 
         ${HeaderRightItems} {
             gap: 5px;
+            text-align: right;
         }
     }
 
