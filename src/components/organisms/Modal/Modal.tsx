@@ -1,5 +1,5 @@
 'use client'
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import ModalTemplate from "@/components/templates/ModalTemplate"
 import { LoseModalContent } from "./ModalStyled"
 import Button from "@/components/atoms/Button"
@@ -10,11 +10,12 @@ import { navigate } from "@/app/actions"
 interface ModalProps {
     open: boolean,
     title: string;
+    titleIcon?: ReactNode;
     action: () => void
     actionLabel: string
 }
 
-const Modal: FC<ModalProps> = ({ open, title, action, actionLabel }) => {
+const Modal: FC<ModalProps> = ({ open, title, titleIcon, action, actionLabel }) => {
     const { text } = useSettingsContext()
     const { restartGame } = useWordsContext()
 
@@ -33,7 +34,7 @@ const Modal: FC<ModalProps> = ({ open, title, action, actionLabel }) => {
 
     if (!open) return null
     return (
-        <ModalTemplate title={title}>
+        <ModalTemplate title={title} titleIcon={titleIcon}>
             <LoseModalContent>
                 <Button onClick={action} label={actionLabel} />
                 <Button onClick={handleNewCategory} label={text.newCategory} />

@@ -1,4 +1,5 @@
 'use client'
+import { SvgWrapper } from "@/components/Icons/IconStyled";
 import styled from "@emotion/styled";
 
 export const ModalTemplateBackdrop = styled.div`
@@ -36,6 +37,13 @@ export const ModalTemplateContent = styled.div`
 `
 
 export const ModalTemplateTitle = styled.h1`
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 40px;
     color: ${({theme}) => theme.primary.contrastText};
+
+    ${SvgWrapper} {
+        margin-top: 2px;
+    }
 `

@@ -13,6 +13,7 @@ export const IconButtonContainer = styled.button<{ $size: IconButtonSize, $varia
     border-radius: 50%;
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.gray[600]};
+    box-shadow: ${({theme}) => theme.buttonShadow};
     transition: transform 0.1s;
     outline: none;
 

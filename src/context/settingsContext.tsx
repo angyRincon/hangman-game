@@ -14,7 +14,7 @@ import { CategoryItem } from "@/types/categories";
 import { LanguageEnum, Settings, SettingsTabItems, ThemeEnum } from "@/types/settings";
 import { TextTypes } from "@/types/texts";
 import { ThemeProvider } from "@emotion/react";
-import { ReactNode, createContext, useContext, useEffect } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 interface ThemeContextProps {
     settings: Settings | null,
@@ -42,12 +42,14 @@ interface ThemeSwitcherProviderProps {
 }
 
 export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProviderProps) => {
+    const [savedSettings, setSavedSettings] = useState(settings)
 
     const handleSaveCookie = () => {
-        if (!settings) setCookie('settings', initialSettings)
+        if (!settings) setCookie('settings', initialSettings);
     }
 
     useEffect(() => {
+        console.log('hilaaa')
         handleSaveCookie()
     }, [])
 
@@ -101,7 +103,6 @@ export const ThemeSwitcherProvider = ({ settings, children }: ThemeSwitcherProvi
         howToPlayItems: getLanguageItems().howToPlayItems
     }
 
-    if (!settings) return <Loading />
     return (
         <ThemeContext.Provider value={values}>
             <ThemeProvider theme={getTheme()}>

@@ -30,7 +30,7 @@ export const spanishText: TextTypes = {
     playAgain: 'Jugar de nuevo',
     newCategory: 'Nueva Categoría',
     quitGame: 'Quitar Juego',
-    youWon: 'Ganaste',
+    youWon: 'Ganaste!',
     continue: 'Continuar',
     paused: 'Pausado',
     english: 'Inglés',

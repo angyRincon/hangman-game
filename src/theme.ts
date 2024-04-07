@@ -39,6 +39,9 @@ export const lightTheme: Theme = {
             '900': '#62376c',
             '950': '#431f4c',
         },
+        yellow: {
+            '100': "#fdff6d"
+        }
     }
 }
 
@@ -81,6 +84,9 @@ export const darkTheme: Theme = {
             '900': '#602a65',
             '950': '#3c1141',
         },
+        yellow: {
+            '100': "#fdff6d"
+        }
 
     }
 }

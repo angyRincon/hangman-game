@@ -40,6 +40,9 @@ declare module '@emotion/react' {
                 '900': string,
                 '950': string,
             },
+            yellow: {
+                '100': string
+            }
         },
     }
 }

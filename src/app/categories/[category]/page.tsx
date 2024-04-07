@@ -8,6 +8,8 @@ import Modal from "@/components/organisms/Modal"
 import { useWordsContext } from "@/context/wordsContext"
 import { useCallback, useEffect, useState } from "react"
 import { useSettingsContext } from "@/context/settingsContext"
+import HappyIcon from "@/components/Icons/HappyIcon"
+import SadIcon from "@/components/Icons/SadIcon"
 
 
 const CategoryPage = () => {
@@ -64,6 +66,7 @@ const CategoryPage = () => {
 
       <Modal
         title={text.youWon}
+        titleIcon={<HappyIcon />}
         open={isWinner && openWinnerModal}
         action={restartGame}
         actionLabel={text.playAgain}
@@ -71,6 +74,7 @@ const CategoryPage = () => {
 
       <Modal
         title={text.youLose}
+        titleIcon={<SadIcon />}
         open={openLooseModal}
         action={restartGame}
         actionLabel={text.playAgain}
