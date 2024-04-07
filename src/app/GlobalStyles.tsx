@@ -37,11 +37,13 @@ const GlobalStyles: FC<GlobalStylesProps> = ({ fontType }) => {
         body {
         max-width: 100vw;
         overflow-x: hidden;
+        height: -webkit-fill-available;
         }
 
         body {
         background-color: ${theme.background};
-        height: 100vh;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
         }
 
         a {

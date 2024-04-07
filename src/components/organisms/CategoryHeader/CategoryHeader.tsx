@@ -9,7 +9,7 @@ import { useWordsContext } from "@/context/wordsContext"
 import HeartBrokenIcon from "@/components/Icons/HeartBrokenIcon"
 import { HeaderLeftItems, HeaderRightItems, HeaderTitle } from "@/components/templates/HeaderTemplate/HeaderTemplateStyled"
 import Modal from "../Modal"
-import { LifePointsContainer, LifePointsValue } from "./CategoryHeaderStyled"
+import { CategoryHeaderContainer, LifePointsContainer, LifePointsValue } from "./CategoryHeaderStyled"
 import { useParams } from "next/navigation"
 import { useCategory } from "@/hooks/useCategory"
 import { useSettingsContext } from "@/context/settingsContext"
@@ -33,7 +33,7 @@ const CategoryHeader = () => {
     const headerTitle = categoriesMap.get(categoryId as string)?.label
 
     return (
-        <>
+        <CategoryHeaderContainer>
             <HeaderTemplate>
                 <HeaderLeftItems>
                     <IconButton onClick={handleOpenMenu} variant="secondary">
@@ -48,7 +48,6 @@ const CategoryHeader = () => {
                         {totalMoves - lifeCounter !== 0 ? <HeartIcon /> : <HeartBrokenIcon />}
                         <LifePointsValue>{totalMoves - lifeCounter}</LifePointsValue>
                     </LifePointsContainer>
-
                 </HeaderRightItems>
             </HeaderTemplate>
 
@@ -58,7 +57,7 @@ const CategoryHeader = () => {
                 action={handleCloseMenu}
                 actionLabel={text.continue}
             />
-        </>
+        </CategoryHeaderContainer>
     )
 }
 

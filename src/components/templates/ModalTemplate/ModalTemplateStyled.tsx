@@ -1,5 +1,6 @@
 'use client'
 import { SvgWrapper } from "@/components/Icons/IconStyled";
+import device from "@/helpers/devices";
 import styled from "@emotion/styled";
 
 export const ModalTemplateBackdrop = styled.div`
@@ -21,10 +22,14 @@ export const ModalTemplateContainer = styled.div`
     right: 0; 
     margin-left: auto; 
     margin-right: auto;
-    width: 500px;
+    max-width: 500px;
     padding: 20px;
     border-radius: 5px;
     z-index: 9;
+
+    @media ${device.tablet} {
+        margin: 0 30px;
+    }
     
 `
 
@@ -42,6 +47,7 @@ export const ModalTemplateTitle = styled.h1`
     gap: 5px;
     font-size: 40px;
     color: ${({theme}) => theme.primary.contrastText};
+    white-space: nowrap;
 
     ${SvgWrapper} {
         margin-top: 2px;

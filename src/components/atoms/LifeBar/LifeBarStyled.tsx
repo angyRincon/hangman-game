@@ -1,4 +1,5 @@
 'use client'
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const LifeBarContainer = styled.div`
@@ -7,6 +8,16 @@ export const LifeBarContainer = styled.div`
     border-radius: 40px;
     width: 300px;
     border-radius: 8px;
+
+    @media ${device.tablet} {
+        width: 200px;
+        padding: 3px 5px; 
+    }
+    
+    @media ${device.phone} {
+        width: 130px;
+        padding: 3px 5px; 
+    }
 `
 
 export const LifeBarItem = styled.div<{ $value: number }>`

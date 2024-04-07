@@ -8,11 +8,13 @@ export const SettingsPageContainer = styled.div`
     height: 100%;
 `
 
-export const SettingsPageContent = styled.div`
+export const SettingsPageCard = styled.div`
     display: grid;
-    grid-template-columns: 500px;
+    grid-template-columns: minmax(100px, 500px);
     padding: 20px;
+    margin: 0 20px;
     border-radius: 4px;
     box-shadow: ${({theme}) => `rgba(0, 0, 0, 0.16) 0px 5px 15px`};
     background-color: ${({ theme }) => theme.primary.main};
+
 `

@@ -1,7 +1,7 @@
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const AlphabetCardButton = styled.button`
-    width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -26,5 +26,15 @@ export const AlphabetCardButton = styled.button`
     &:disabled{
         opacity: 0.6;
         cursor: auto;
+    }
+
+    @media ${device.tablet} {
+        font-size: 18px;
+        height: 50px;
+    }
+
+    @media ${device.phone} {
+        font-size: 16px;
+        height: 40px;
     }
 `

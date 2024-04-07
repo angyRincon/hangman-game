@@ -79,7 +79,6 @@ export const WordsContextProvider: FC<{ children: ReactNode }> = ({ children }) 
         setSelectedLetters([])
     }
 
-
     const values = {
         movie,
         isWinner,

@@ -5,19 +5,20 @@ import styled from '@emotion/styled'
 export const HeaderTemplateContainer = styled.nav`
     position: fixed;
     top: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 60px;
-
+    
     @media ${device.tablet} {
-        position: relative;
-        padding: 30px 30px;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        padding: 30px 20px;
     }
 `
 
-const HeaderSides = styled.div`
+export const HeaderSides = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;

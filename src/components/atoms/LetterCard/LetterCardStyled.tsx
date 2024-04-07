@@ -1,3 +1,4 @@
+import device from '@/helpers/devices'
 import styled from '@emotion/styled'
 
 export const LetterCardItem = styled.div<{$isActive: boolean}>`
@@ -12,5 +13,16 @@ export const LetterCardItem = styled.div<{$isActive: boolean}>`
     color: ${({theme}) => theme.secondary.contrastText};
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    margin: 0 5px;
+
+    @media ${device.tablet} {
+        width: 60px;
+        height: 70px;
+        font-size: 18px;
+    }
+
+    @media ${device.phone} {
+        width: 40px;
+        height: 50px;
+        font-size: 18px;
+    }
 `
